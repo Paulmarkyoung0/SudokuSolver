@@ -29,6 +29,14 @@ class SudokuSolver {
         })
     }
 
+    /*Sudoku has two promary ways of narrowing down number possibilities to find a solution.
+    The first is elimination. If a cell has a known value or a set of cells has a set of known values,
+    we can eliminate those possibilities in nearby cells. The multiCellCompare function performs this.
+    
+    The second method is finding outliers. If in a given row, column, or box, a number possibility is 
+    found only once, we can eliminate all other possibilities in that cell. Likewise, if a set of
+    numbers is found the same number of times, we can eliminate all other possibilities in those cells.
+    This invertedData class and multiNumberCompare functions, restructure the data to perform this task*/
     compute(){
         let i
         for(i = 0; i < 1000 && !this.isSolved(); i++){
